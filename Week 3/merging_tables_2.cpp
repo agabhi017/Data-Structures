@@ -49,8 +49,7 @@ int main(){
         }
 
         if (tab_list[dest - 1].size_ > max_size){max_size = tab_list[dest - 1].size_;}
-        //for (int i = 0; i < n; i++){cout << tab_list[i].size_ << " ";}
-        //cout << endl;
+
         cout << max_size << endl;
     }
     return 0;
