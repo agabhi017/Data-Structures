@@ -64,7 +64,7 @@ static void precompute_hashes(vector <vector <pair <int, long long> > >& hash_ar
     long long prev_hash = hash_string(text, text_len - len, len, x_pow, prime_p);
     fill_hash_array(hash_array, prev_hash, text_len - len);
 
-    long long new_hash;
+    long long new_hash = 0;
     for (int i = text_len - len - 1; i >= 0; i--){
         new_hash = (x_pow[1] * prev_hash + text[i] - (x_pow[len] * text[i + len]) % prime_p) % prime_p;
         check_MODD(new_hash, prime_p);
@@ -89,7 +89,7 @@ static set <pair <int, int> > check_hashes(const vector <vector <pair <int, long
     long long prev_hash = hash_string(pattern, pattern_len - len, len, x_pow, prime_p);
     find_hash(compare_hash, prev_hash, pattern_len - len, ans);
 
-    long long new_hash;
+    long long new_hash = 0;
     for (int i = pattern_len - len - 1; i >= 0; i--){
         new_hash = (x_pow[1] * prev_hash + pattern[i] - (x_pow[len] * pattern[i + len]) % prime_p) % prime_p;
         check_MODD(new_hash, prime_p);
